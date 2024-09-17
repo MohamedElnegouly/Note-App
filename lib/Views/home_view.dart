@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class NotesView extends StatelessWidget {
+  const NotesView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
         children: [
           Center(
             child: Text(
-              'Helllllllllo',
+              'Notes',
             ),
           )
         ],
