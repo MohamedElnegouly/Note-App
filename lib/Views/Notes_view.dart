@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/Notes_View_Body.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
@@ -6,16 +7,7 @@ class NotesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: Text(
-              'Notes',
-            ),
-          )
-        ],
-      ),
+      body: NotesViewBody(),
     );
   }
 }
