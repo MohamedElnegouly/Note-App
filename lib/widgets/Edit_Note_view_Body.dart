@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:note_app/widgets/Custom_App_Bar.dart';
+import 'package:note_app/widgets/Custom_text_field.dart';
 
 class EditNoteViewBody extends StatelessWidget {
   const EditNoteViewBody({super.key});
@@ -16,6 +17,17 @@ class EditNoteViewBody extends StatelessWidget {
           CustomAppBar(
             title: 'Edit Note',
             icon: Icons.check,
+          ),
+          SizedBox(
+            height: 35,
+          ),
+          CustomTextField(hint: 'title'),
+          SizedBox(
+            height: 16,
+          ),
+          CustomTextField(
+            hint: 'Content',
+            maxLine: 5,
           ),
         ],
       ),
