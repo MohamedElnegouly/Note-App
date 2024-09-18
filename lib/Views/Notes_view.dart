@@ -26,7 +26,7 @@ class NotesView extends StatelessWidget {
         child: const Icon(
           Icons.add,
           size: 27,
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       body: const NotesViewBody(),
