@@ -1,8 +1,9 @@
 import 'package:hive/hive.dart';
-
+// name of the generated file must be right
+// in the terminal run --> dart run build_runner build
 part 'note_model.g.dart';
 
-// defferent from class to another
+// different from class to another
 @HiveType(typeId: 0)
 class NoteModel extends HiveObject {
   //Uniqe per class
