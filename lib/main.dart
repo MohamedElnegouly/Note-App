@@ -6,7 +6,7 @@ import 'package:note_app/Views/Notes_view.dart';
 void main() async {
   //initialize hive
   await Hive.initFlutter();
-  //create hive box ,, collection and its name
+  //create hive box (collection) and its name
   await Hive.openBox(kNotesBox);
   runApp(const NotesApp());
 }
