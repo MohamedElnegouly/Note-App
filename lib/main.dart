@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:note_app/Constants.dart';
+import 'package:note_app/Models/note_model.dart';
 import 'package:note_app/Views/Notes_view.dart';
 
 void main() async {
@@ -8,6 +9,8 @@ void main() async {
   await Hive.initFlutter();
   //create hive box (collection) and its name
   await Hive.openBox(kNotesBox);
+  // to tell hive to storage NoteModel
+  Hive.registerAdapter(NoteModelAdapter());
   runApp(const NotesApp());
 }
 
