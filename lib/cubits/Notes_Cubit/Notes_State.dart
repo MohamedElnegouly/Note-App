@@ -2,16 +2,16 @@ import 'package:note_app/Models/note_model.dart';
 
 abstract class NotesState {}
 
-class AddNoteInitial extends NotesState {}
+class NotesInitial extends NotesState {}
 
-class AddNoteLoading extends NotesState {}
+class NotesLoading extends NotesState {}
 
-class AddNoteSuccess extends NotesState {
+class NotesSuccess extends NotesState {
   final List<NoteModel> notes;
-  AddNoteSuccess(this.notes);
+  NotesSuccess(this.notes);
 }
 
-class AddNoteFaliure extends NotesState {
+class NotesFaliure extends NotesState {
   final String errMessage;
-  AddNoteFaliure(this.errMessage);
+  NotesFaliure(this.errMessage);
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:note_app/Constants.dart';
+import 'package:note_app/cubits/Notes_Cubit/Notes_cubit.dart';
 import 'package:note_app/widgets/Add_Note_Buttom_sheet.dart';
 import '../widgets/Notes_View_Body.dart';
 
@@ -8,30 +10,34 @@ class NotesView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: kPrimaryColor,
-        onPressed: () {
-          showModalBottomSheet(
-            //to be scrollable
-            isScrollControlled: true,
-            context: context,
-            builder: (context) {
-              return const AddNoteButtomSheet();
-            },
-          );
-        },
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 0.5, color: Colors.white),
-          borderRadius: BorderRadius.circular(100),
+    return BlocProvider(
+      create: (context) => NotesCubit(),
+      child: Scaffold(
+        resizeToAvoidBottomInset: false,
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: kPrimaryColor,
+          onPressed: () {
+            showModalBottomSheet(
+              //to be scrollable
+              isScrollControlled: true,
+              context: context,
+              builder: (context) {
+                return const AddNoteButtomSheet();
+              },
+            );
+          },
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(width: 0.5, color: Colors.white),
+            borderRadius: BorderRadius.circular(100),
+          ),
+          child: const Icon(
+            Icons.add,
+            size: 27,
+            color: Colors.black,
+          ),
         ),
-        child: const Icon(
-          Icons.add,
-          size: 27,
-          color: Colors.black,
-        ),
+        body: const NotesViewBody(),
       ),
-      body: const NotesViewBody(),
     );
   }
 }
