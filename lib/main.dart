@@ -25,19 +25,13 @@ class NotesApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      //provide add note cubit to all the project
-      providers: [
-        BlocProvider(create: (context) => AddNoteCubit()),
-      ],
-      child: MaterialApp(
-        theme: ThemeData(
-          brightness: Brightness.dark,
-          fontFamily: 'Playpen Sans',
-        ),
-        debugShowCheckedModeBanner: false,
-        home: const NotesView(),
+    return MaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        fontFamily: 'Playpen Sans',
       ),
+      debugShowCheckedModeBanner: false,
+      home: const NotesView(),
     );
   }
 }
